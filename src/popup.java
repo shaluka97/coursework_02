@@ -11,13 +11,16 @@ abstract class popup extends JFrame {
         setLayout(new FlowLayout(FlowLayout.LEFT));
         lbl.setFont(new Font("",1,20));
         add(lbl);
+        setResizable(false);
     }
     abstract void display(boolean status);
 }
 
 class speaker extends popup {
-    public void display(boolean status){
+    speaker(){
         setTitle("Speaker");
+    }
+    public void display(boolean status){
         lbl.setText(status?"ON":"OFF");
     }
 }
